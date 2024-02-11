@@ -1,12 +1,12 @@
 import { Text, TextProps, StyleSheet } from 'react-native';
-import { PropsWithChildren } from 'react';
+import { forwardRef, PropsWithChildren } from 'react';
 import { Color } from '@app/components/Color';
 
 export type ParagraphProps = TextProps & {
     size?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 };
 
-export const Paragraph = ({ children, size = 'h1', style, ...props }: PropsWithChildren<ParagraphProps>) => {
+export const Paragraph = forwardRef<Text, PropsWithChildren<ParagraphProps>>(({ children, size = 'h1', style, ...props }, ref) => {
     const fontSize = {
         h1: 42,
         h2: 36,
@@ -17,11 +17,11 @@ export const Paragraph = ({ children, size = 'h1', style, ...props }: PropsWithC
     }[size ?? 'h1'];
 
     return (
-        <Text style={[styles.paragraph, { fontSize }, style]} {...props}>
+        <Text ref={ref} style={[styles.paragraph, { fontSize }, style]} {...props}>
             {children}
         </Text>
     );
-};
+});
 
 
 const styles = StyleSheet.create({

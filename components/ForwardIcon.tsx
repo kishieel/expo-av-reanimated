@@ -1,5 +1,5 @@
-import { IconProps } from '@app/components/icons/types';
 import Svg, { Path } from 'react-native-svg';
+import { IconProps } from '@app/types/IconProps';
 
 export const ForwardIcon = (props: IconProps) => {
     return (

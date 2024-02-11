@@ -14,15 +14,15 @@
     "synthesize:to-assets": "cp ./polly/speech.mp3 ./assets/speech.mp3; cp ./polly/speech.marks assets/speech.marks"
   },
   "dependencies": {
-    "@react-native-community/slider": "4.5.0",
-    "expo": "~50.0.5",
-    "expo-av": "~13.10.4",
-    "expo-file-system": "~16.0.5",
+    "@react-native-community/slider": "4.4.2",
+    "expo": "~50.0.6",
+    "expo-av": "~13.10.5",
+    "expo-file-system": "~16.0.6",
     "expo-splash-screen": "~0.26.4",
     "expo-status-bar": "~1.11.1",
     "font": "0.0.4",
     "react": "18.2.0",
-    "react-native": "0.73.2",
+    "react-native": "0.73.4",
     "react-native-reanimated": "~3.6.2",
     "react-native-svg": "14.1.0"
   },
