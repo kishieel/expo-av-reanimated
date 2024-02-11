@@ -6,17 +6,35 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "lint": "eslint --cache --cache-location ./.eslintcache --color \"**/*.{ts,tsx}\"",
+    "format": "eslint --fix --cache --cache-location ./.eslintcache --color \"**/*.{ts,tsx}\"",
+    "synthesize:mp3": "TEXT=$(cat ./polly/input.txt); aws polly synthesize-speech --output-format mp3 --engine neural --voice-id Ola --text \"$TEXT\" --text-type ssml --no-cli-pager ./polly/speech.mp3",
+    "synthesize:json": "TEXT=$(cat ./polly/input.txt); aws polly synthesize-speech --output-format json --engine neural --voice-id Ola --text \"$TEXT\" --text-type ssml --no-cli-pager --speech-mark-type='[\"ssml\"]' ./polly/speech.marks",
+    "synthesize:to-assets": "cp ./polly/speech.mp3 ./assets/speech.mp3; cp ./polly/speech.marks assets/speech.marks"
   },
   "dependencies": {
+    "@react-native-community/slider": "4.5.0",
     "expo": "~50.0.5",
+    "expo-av": "~13.10.4",
+    "expo-file-system": "~16.0.5",
+    "expo-splash-screen": "~0.26.4",
     "expo-status-bar": "~1.11.1",
+    "font": "0.0.4",
     "react": "18.2.0",
-    "react-native": "0.73.2"
+    "react-native": "0.73.2",
+    "react-native-reanimated": "~3.6.2",
+    "react-native-svg": "14.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@babel/eslint-parser": "7.23.3",
     "@types/react": "~18.2.45",
+    "eslint": "8.54.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-config-universe": "12.0.0",
+    "eslint-plugin-prettier": "5.1.3",
+    "prettier": "3.2.4",
     "typescript": "^5.1.3"
   },
   "private": true
